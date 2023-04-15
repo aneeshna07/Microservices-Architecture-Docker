@@ -1,0 +1,15 @@
+version: "3.7"  # version of compose format
+
+services:
+  landing-service:
+    build: ./landing
+    hostname: landing-service
+    ports:
+      - 8001:8001  # host:container
+    networks:
+      sample:
+        aliases:
+          - landing-service
+  # Add more services below
+networks:
+  sample:
