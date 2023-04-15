@@ -1,0 +1,86 @@
+version: "3.7"  # version of compose format
+
+services:
+  landing-service:
+    build: ./landing
+    hostname: landing-service
+    ports:
+      - 8000:8000  # host:container
+    networks:
+      sample:
+        aliases:
+          - landing-service
+  # Add more services below
+
+  add-service:
+    build: ./Add
+    hostname: add-service
+    ports:
+      - 5000:5000  
+    networks:
+      sample:
+        aliases:
+          - add-service
+
+  minus-service:
+    build: ./Minus
+    hostname: minus-service
+    ports:
+      - 5001:5001
+    networks:
+      sample:
+        aliases:
+          - minus-service
+
+  multiply-service:
+    build: ./Multiply
+    hostname: multiply-service
+    ports:
+      - 5002:5002
+    networks:
+      sample:
+        aliases:
+          - multiply-service
+
+  divide-service:
+    build: ./Divide
+    hostname: divide-service
+    ports:
+      - 5003:5003
+    networks:
+      sample:
+        aliases:
+          - divide-service
+
+  modulus-service:
+    build: ./Modulus
+    hostname: modulus-service
+    ports:
+      - 5004:5004
+    networks:
+      sample:
+        aliases:
+          - modulus-service
+
+  gcd-service:
+    build: ./GCD
+    hostname: gcd-service
+    ports:
+      - 5005:5005
+    networks:
+      sample:
+        aliases:
+          - gcd-service
+
+  equals-service:
+    build: ./Equals
+    hostname: equals-service
+    ports:
+      - 5006:5006
+    networks:
+      sample:
+        aliases:
+          - equals-service
+
+networks:
+  sample:
